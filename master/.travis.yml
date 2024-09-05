@@ -1,0 +1,21 @@
+language: python
+
+dist: focal
+
+python:
+  - "3.9"
+  - "3.10"
+  - "3.11"
+
+# command to install dependencies
+before_install:
+  - curl -sSL https://install.python-poetry.org | python3 -
+install:
+  - poetry install
+  - poetry run pip install pytest-cov
+  - poetry run pip install coveralls
+# command to run tests
+script:
+  - poetry run pytest tests --cov=okama/
+after_success:
+  - poetry run coveralls

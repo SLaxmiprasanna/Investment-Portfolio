@@ -1,0 +1,9 @@
+/docs/_build/
+/docs/source/
+/docs/stubs/
+!/main_notebook.ipynb
+dist/
+__pycache__
+*.pyc
+poetry.lock
+/.idea_backup
